@@ -1,13 +1,23 @@
 /**
- * Use Case 1: Application Entry & Welcome Message
- * Entry point of the Palindrome Checker application.
- * Version: 1.0
+ * Use Case 2: Hardcoded Palindrome Validation
+ *
+ * This program checks whether a predefined (hardcoded)
+ * string is a palindrome by comparing characters
+ * from the beginning and the end of the string.
  */
-public class PalindromeCheckerApp {
+class PalindromeCheckerApp {
     public static void main(String[] args) {
+        String input = "madam";
 
-        System.out.println("Welcome to the Palindrome Checker Management System");
-        System.out.println("Version: 1.0");
-        System.out.println("System initialized successfully.");
+        boolean isPalindrome = true;
+        for (int i = 0; i < input.length() / 2; i++) {
+            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
+                isPalindrome = false;
+                break;
+            }
+        }
+
+        System.out.println("Input text: " + input);
+        System.out.println("Is it a Palindrome? : " + isPalindrome);
     }
 }
